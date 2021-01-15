@@ -1,7 +1,9 @@
 <?php
 include 'db_connect.php';
-$username = "john_doe";
-$userpass = "Comp@321!";
+
+$username = $_GET['username'];
+$userpass = $_GET['userpass'];
+
 $sql = "SELECT user_name FROM users where user_name='".$username."' && user_pass='".$userpass."'";
 $result = mysqli_query($conn, $sql);
 

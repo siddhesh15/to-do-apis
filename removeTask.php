@@ -1,13 +1,16 @@
 <?php
 include 'db_connect.php';
 
-$taskno = 2;
+// $content = trim(file_get_contents("php://input"));
+// $decoded = json_decode($content, true);
+
+$taskno = $_GET['task_no'];
 $sql = "DELETE FROM tasks where task_no='".$taskno."'";
 
 if (mysqli_query($conn, $sql)) {
   $response = [];
   $response["status"] = "success";
-  $response["message"] = "Record deleted successfully";
+  $response["message"] = "Successfully deleted record";
   echo json_encode($response);
 } else {
   $response = [];

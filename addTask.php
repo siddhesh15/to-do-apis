@@ -1,20 +1,21 @@
 <?php
 include 'db_connect.php';
 
-$task_no = $_GET['task_no'];
+$task_name = $_GET['task_name'];
 $task_priority = $_GET['task_priority'];
+$user_no = $_GET['user_no'];
 
-$sql = "UPDATE tasks SET task_priority='".$task_priority."' WHERE task_no='".$task_no."'";
+$sql = "INSERT INTO tasks (task_no,task_name,task_priority,user_no) VALUES (DEFAULT,'".$task_name."',".$task_priority.",".$user_no.")";
 
 if (mysqli_query($conn, $sql)) {
   $response = [];
   $response["status"] = "success";
-  $response["message"] = "Record updated successfully";
+  $response["message"] = "Record added successfully";
   echo json_encode($response);
 } else {
   $response = [];
   $response["status"] = "failure";
-  $response["message"] = "Error updating record";
+  $response["message"] = "Error adding record";
   echo json_encode($response);
 }
 

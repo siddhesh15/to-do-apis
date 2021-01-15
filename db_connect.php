@@ -1,5 +1,7 @@
 <?php
 
+header("Access-Control-Allow-Origin: *");
+
 $servername = "localhost";
 $username = "id15901075_todolist15";
 $password = "PR}Y!y&4u<lU+\c9";

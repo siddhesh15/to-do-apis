@@ -1,7 +1,7 @@
 <?php
 include 'db_connect.php';
 
-$sql = "SELECT task_no, task_name, task_priority FROM tasks";
+$sql = "SELECT task_no, task_name, task_priority FROM tasks ORDER BY task_priority ASC";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
